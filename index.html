@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Meal For Your Ingredients</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="feature-v20 cd-padding-y-xl">
+      <div class="cd-container cd-max-width-sm cd-margin-bottom-xl">
+        <h1 class="cd-text-center">Free Recipe For Your Meals</h1>
+      </div>
+
+      <div class="cd-container cd-max-width-adaptive-lg">
+        <ul class="feature-v20__list">
+          <li class="feature-v20__item">
+            <figure class="feature-v20__icon-wrapper">
+              <svg
+                class="feature-v20__icon cd-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <g fill="currentColor">
+                  <path
+                    d="M21 10H3c-1.103 0-2-.897-2-2V5c0-1.103.897-2 2-2h18c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z"
+                  ></path>
+                  <rect
+                    x="1"
+                    y="12"
+                    width="6"
+                    height="9"
+                    rx="2"
+                    ry="2"
+                    opacity=".4"
+                  ></rect>
+                  <rect
+                    x="9"
+                    y="12"
+                    width="14"
+                    height="9"
+                    rx="2"
+                    ry="2"
+                    opacity=".4"
+                  ></rect>
+                </g>
+              </svg>
+            </figure>
+
+            <div class="cd-text-center">
+              <h4 class="cd-margin-bottom-2xs">Search</h4>
+              <p class="feature-v20__paragraph">
+                You can search for your recipes
+              </p>
+            </div>
+          </li>
+
+          <li class="feature-v20__item">
+            <figure class="feature-v20__icon-wrapper">
+              <svg
+                class="feature-v20__icon cd-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <g fill="currentColor">
+                  <path
+                    d="M9 9H4c-1.103 0-2-.897-2-2V4c0-1.103.897-2 2-2h5c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z"
+                  ></path>
+                  <rect
+                    x="2"
+                    y="11"
+                    width="9"
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    opacity=".4"
+                  ></rect>
+                  <path
+                    d="M20 22h-5c-1.103 0-2-.897-2-2v-3c0-1.103.897-2 2-2h5c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z"
+                  ></path>
+                  <rect
+                    x="13"
+                    y="2"
+                    width="9"
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    transform="rotate(180 17.5 7.5)"
+                    opacity=".4"
+                  ></rect>
+                </g>
+              </svg>
+            </figure>
+
+            <div class="cd-text-center">
+              <h4 class="cd-margin-bottom-2xs">Recommendations</h4>
+              <p class="feature-v20__paragraph">
+                You can get delicious food recommendations
+              </p>
+            </div>
+          </li>
+
+          <li class="feature-v20__item">
+            <figure class="feature-v20__icon-wrapper">
+              <svg
+                class="feature-v20__icon cd-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <g fill="currentColor">
+                  <circle cx="19" cy="9" r="5"></circle>
+                  <path
+                    d="M1 3.059A23.925 23.925 0 0 1 8 20c0-3.416 1.557-6.468 4-8.486"
+                    fill="none"
+                    opacity=".4"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </g>
+              </svg>
+            </figure>
+
+            <div class="cd-text-center">
+              <h4 class="cd-margin-bottom-2xs">Recipe</h4>
+              <p class="feature-v20__paragraph">
+                Recipe for your choice of meal
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="lists" id="lists">
+      <h2>Best of Todays</h2>
+      <div class="banner__grid">
+        <div class="banner__text">
+          <h2>Recommended by the Kitchen</h2>
+          <div id="meal_random"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="meal-wrapper">
+        <div class="meal-search">
+          <h2 class="title">Find Meals For Your Ingredients</h2>
+
+          <div class="meal-search-box">
+            <input
+              type="text"
+              class="search-control"
+              placeholder="Enter an ingredient"
+              id="search-input"
+              autocomplete="off"
+            />
+            <button
+              title="button"
+              type="submit"
+              class="search-btn btn"
+              id="search-btn"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="meal-result">
+          <div id="meal"></div>
+        </div>
+
+        <div class="meal-details">
+          <button
+            type="button"
+            title="button"
+            class="btn recipe-close-btn"
+            id="recipe-close-btn"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+
+          <div class="meal-details-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script1.js"></script>
+  </body>
+</html>
